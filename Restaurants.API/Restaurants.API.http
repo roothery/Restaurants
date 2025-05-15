@@ -1,1 +1,49 @@
-@Restaurants.API_HostAddress = http://localhost:5000
+@Restaurants.API_HostAddress = https://localhost:5000
+
+
+
+GET {{Restaurants.API_HostAddress}}/api/restaurants
+
+###
+
+GET {{Restaurants.API_HostAddress}}/api/restaurants/1
+
+###
+
+POST {{Restaurants.API_HostAddress}}/api/restaurants
+Content-Type: application/json
+
+{
+    "Name": "Spicy Delights",
+    "Description": "A culinary experience like no other",
+    "Category": "Fine Dining",
+    "HasDelivery": true,
+    "ContactEmail": "info@gourmetdelights.com",
+    "ContactNumber": "555-123-4567",
+    "City": "Metropolis",
+    "Street": "456 Gourmet Avenue",
+    "PostalCode": "54321"
+}
+
+###
+
+GET {{Restaurants.API_HostAddress}}/api/restaurants/3
+
+###
+
+POST {{Restaurants.API_HostAddress}}/api/restaurants
+Content-Type: application/json
+
+{
+    "Name": "Tasty Bites",
+    "Description": "A cozy restaurant serving a variety of delicious dishes.",
+    "Category": "International Cuisine",
+    "HasDelivery": true,
+    "ContactEmail": "info@tastybites.com",
+    "ContactNumber": "1199225-7825",
+    "City": "New York",
+    "Street": "123 Main Street",
+    "PostalCode": "79050-001"
+}
+
+###
