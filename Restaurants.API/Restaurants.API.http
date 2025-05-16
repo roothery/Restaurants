@@ -35,9 +35,9 @@ POST {{Restaurants.API_HostAddress}}/api/restaurants
 Content-Type: application/json
 
 {
-    "Name": "Tasty Bites",
+    "Name": "Tasty Bites Test 1",
     "Description": "A cozy restaurant serving a variety of delicious dishes.",
-    "Category": "International Cuisine",
+    "Category": "American",
     "HasDelivery": true,
     "ContactEmail": "info@tastybites.com",
     "ContactNumber": "1199225-7825",
@@ -52,13 +52,13 @@ DELETE {{Restaurants.API_HostAddress}}/api/restaurants/5
 
 ###
 
-PATCH {{Restaurants.API_HostAddress}}/api/restaurants/4
+PATCH {{Restaurants.API_HostAddress}}/api/restaurants/6
 Content-Type: application/json
 
 {
-  "Name": "Sample patch",
+  "Name": "Tasty Bites Test 1.1",
   "Description": "This is a sample restaurant description.",
-  "HasDelivery": true
+  "HasDelivery": false
 }
 
 ###
