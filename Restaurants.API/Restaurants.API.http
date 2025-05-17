@@ -10,6 +10,30 @@ GET {{Restaurants.API_HostAddress}}/api/restaurants/1
 
 ###
 
+GET {{Restaurants.API_HostAddress}}/api/restaurants/1/dishes
+
+###
+
+GET {{Restaurants.API_HostAddress}}/api/restaurants/1/dishes/2
+
+###
+
+POST {{Restaurants.API_HostAddress}}/api/restaurants/6/dishes
+Content-Type: application/json
+
+{
+  "Name": "Spaghetti Bolognese",
+  "Description": "Classic Italian pasta dish with rich meat sauce",
+  "Price": 12.99,
+  "KiloCalories": 750
+}
+
+###
+
+DELETE {{Restaurants.API_HostAddress}}/api/restaurants/6/dishes
+
+###
+
 POST {{Restaurants.API_HostAddress}}/api/restaurants
 Content-Type: application/json
 
@@ -59,6 +83,18 @@ Content-Type: application/json
   "Name": "Tasty Bites Test 1.1",
   "Description": "This is a sample restaurant description.",
   "HasDelivery": false
+}
+
+###
+
+POST {{Restaurants.API_HostAddress}}/api/restaurants/2/dishes
+Content-Type: application/json
+
+{
+  "Name": "Spaghetti Bolognese",
+  "Description": "Classic Italian pasta dish with rich meat sauce",
+  "Price": 12.99,
+  "KiloCalories": 750
 }
 
 ###
