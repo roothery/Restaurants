@@ -1,12 +1,14 @@
 @Restaurants.API_HostAddress = https://localhost:5000
 
-
+@token = CfDJ8CjnFiXP79JPkmXZsdc80I5IiC6Ke8gtjLoaDTMaZvc1JiBqurJaK8WLpDb7euudBlzTmWrf1QcG9fA7_7waPzUxEecGX4Hj6oRByH24XEASlzKMkv_4xmJocWADcq7QHNRFNaClzDdG7ujmwAXrU_D9ygzfeKSHZfr-SkWNnZ6LSOwSvYIyXaZt1gHOZgKNrVnyPIig5mU0_Afe2lesfE43nFMp2eqIqafWHd6PYO5KvY9q_ycc-1UPYkF2K-Qxt7Lcie-58mO54ZWrzkIdFxcLdcEQYqMkmebIJBFrrAzPkkpoPUthBKahXygE7F-xUdNWSPpLebSia9dYnDOEn_feEEcM9ICn6X3faaPQEDaHoZBXoffm23reOOs_d3VwJ8SeXM8diXJ9AglxC6QAh1ELEzcfE5FgNIigHkzxnNmuNguOCCT6sl4dUOx3ZsJGC1XFRZmB8huvgcGL-hczOriOP1z29ZfAoXw2tIsrqRjP9owolmoA4920S3zzHJkHUNLg5pAJhaLGEohwM2v_ZZKcSwKv69z4SRBTcza-9Eay6rvOUulvzz3eCom9TYbKCmHyV0K_rq7v9QRosmw-1_dgruJ9wu91VJP1dOCSFxYum7QL1_AeywN7CcVwmAiyjzx0pBU5HFNq3BIDkLj5VCoYenV1iV1Mt_dcJ-0ysACNtG0IENmg4Sr2hpz7iQI5Gw
 
 GET {{Restaurants.API_HostAddress}}/api/restaurants
+#Authorization: Bearer {{token}}
 
 ###
 
 GET {{Restaurants.API_HostAddress}}/api/restaurants/1
+Authorization: Bearer {{token}}
 
 ###
 
@@ -95,6 +97,26 @@ Content-Type: application/json
   "Description": "Classic Italian pasta dish with rich meat sauce",
   "Price": 12.99,
   "KiloCalories": 750
+}
+
+###
+
+POST {{Restaurants.API_HostAddress}}/api/identity/register
+Content-Type: application/json
+
+{
+    "email": "testuser@test.com",
+    "password": "Password1!"
+}
+
+###
+
+POST {{Restaurants.API_HostAddress}}/api/identity/login
+Content-Type: application/json
+
+{
+    "email": "testuser@test.com",
+    "password": "Password1!"
 }
 
 ###
