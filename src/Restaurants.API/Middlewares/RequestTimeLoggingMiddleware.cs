@@ -16,7 +16,8 @@ namespace Restaurants.API.Middlewares
                 logger.LogInformation("Request [{Verb}] at {Path} took {Time} ms",
                     context.Request.Method,
                     context.Request.Path,
-                    stopWatch.ElapsedMilliseconds);
+                    stopWatch.ElapsedMilliseconds
+                );
             }
         }
     }

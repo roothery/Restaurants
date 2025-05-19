@@ -26,6 +26,9 @@ namespace Restaurants.API.Middlewares
             catch (Exception ex)
             {
                 logger.LogError(ex, ex.Message);
+
+                context.Response.StatusCode = 500;
+                await context.Response.WriteAsync("Something went wrong");
             }
         }
     }
