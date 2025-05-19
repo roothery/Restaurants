@@ -1,9 +1,11 @@
 @Restaurants.API_HostAddress = https://localhost:5000
 
 @token = CfDJ8CjnFiXP79JPkmXZsdc80I5IiC6Ke8gtjLoaDTMaZvc1JiBqurJaK8WLpDb7euudBlzTmWrf1QcG9fA7_7waPzUxEecGX4Hj6oRByH24XEASlzKMkv_4xmJocWADcq7QHNRFNaClzDdG7ujmwAXrU_D9ygzfeKSHZfr-SkWNnZ6LSOwSvYIyXaZt1gHOZgKNrVnyPIig5mU0_Afe2lesfE43nFMp2eqIqafWHd6PYO5KvY9q_ycc-1UPYkF2K-Qxt7Lcie-58mO54ZWrzkIdFxcLdcEQYqMkmebIJBFrrAzPkkpoPUthBKahXygE7F-xUdNWSPpLebSia9dYnDOEn_feEEcM9ICn6X3faaPQEDaHoZBXoffm23reOOs_d3VwJ8SeXM8diXJ9AglxC6QAh1ELEzcfE5FgNIigHkzxnNmuNguOCCT6sl4dUOx3ZsJGC1XFRZmB8huvgcGL-hczOriOP1z29ZfAoXw2tIsrqRjP9owolmoA4920S3zzHJkHUNLg5pAJhaLGEohwM2v_ZZKcSwKv69z4SRBTcza-9Eay6rvOUulvzz3eCom9TYbKCmHyV0K_rq7v9QRosmw-1_dgruJ9wu91VJP1dOCSFxYum7QL1_AeywN7CcVwmAiyjzx0pBU5HFNq3BIDkLj5VCoYenV1iV1Mt_dcJ-0ysACNtG0IENmg4Sr2hpz7iQI5Gw
+@token_owner = CfDJ8CjnFiXP79JPkmXZsdc80I4r7IOqMYB-UuXdiNBV-YaFMyhSTVHvdnMPkaTCEhrYosJOUoaTY0CtlGqtWJYcAuDtCgGhAwedI1-nRK88SRPLdzlAcZhAINVmHCKTyMm4ohGE10hWgRZDwydTMzLFuxiNurRvIkwscxhZ7cGCkVX1SxvZgroCD5ptkJn8YB64MKmYs-PDuR0TFPYjsvQszjDKpTFfYiJ_hIs7tPbMfvQ53VOHzYbbdDS_vpnxctetYhmagew4ehHPKkWe6kvVL2LVcEeE9EqI2agfmxQZ5kdtuZR1TTRvh5s4zjjnSQrjHDUS65kpGLTl37nB_7Yzj__xONFTwkr14OWrVsQHW4ic_CXaeShrZWW_-CpYn2HSo8ZkJcY_i3lcaInD2g-PJMtmxynC5hqUBhkNPdxY5fj1BjzwXNPHrL8jGbDx7iLSRKxIfQP0WV74AsnTXXnoqfr7Q0332tzI2UcRk4AAyMD3_QHhmyYDsHWGADNd3i7Nwv2suShf6jU0NxLqephoIdf74eBYBWZ5nB8eAJ5zhbJ5bMDVpu_aX5KIkQi3wpwaTxHuAVl_Kvhtzv7rZtE1yOuSg2ZXn-3C_lzwhSI0pQjeX9Btyxe-_H_Cqcj_cghMD7Uak4O4PqkOVvqMpAFrT4SfVeP0-PCwSCBwfk6wbPuJh5YO287NcduslJqXZQM3NLovrZEqlZOAgVMdJH9TS4uohkczn4TAxDjy9mwCx72Ux6db1kt_DR81ldkuIhsYpvWIZfjxrp3psbrAe750Wbmki9LjOUvJfcWYghuvmh0t
 
 GET {{Restaurants.API_HostAddress}}/api/restaurants
 #Authorization: Bearer {{token}}
+Authorization: Bearer {{token_owner}}
 
 ###
 
@@ -58,10 +60,11 @@ GET {{Restaurants.API_HostAddress}}/api/restaurants/3
 ###
 
 POST {{Restaurants.API_HostAddress}}/api/restaurants
+Authorization: Bearer {{token_owner}}
 Content-Type: application/json
 
 {
-    "Name": "Tasty Bites Test 1",
+    "Name": "Tasty Bites Test - Owner restaurant 2",
     "Description": "A cozy restaurant serving a variety of delicious dishes.",
     "Category": "American",
     "HasDelivery": true,
@@ -105,7 +108,7 @@ POST {{Restaurants.API_HostAddress}}/api/identity/register
 Content-Type: application/json
 
 {
-    "email": "testuser@test.com",
+    "email": "owner2@test.com",
     "password": "Password1!"
 }
 
@@ -115,7 +118,7 @@ POST {{Restaurants.API_HostAddress}}/api/identity/login
 Content-Type: application/json
 
 {
-    "email": "testuser@test.com",
+    "email": "owner2@test.com",
     "password": "Password1!"
 }
 
